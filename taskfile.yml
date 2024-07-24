@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  start-db:
+    cmds:
+      - bash ./scripts/start-weaviate.sh
+    env:
+      OPENAI_API_KEY: "{{.OPENAI_API_KEY}}"
+  
+  stop-db:
+    cmds:
+      - bash ./scripts/stop-weaviate.sh
+  
+  stop-remove-db:
+    cmds:
+      - bash ./scripts/stop-remove-weaviate.sh
